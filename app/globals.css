@@ -178,44 +178,33 @@
   color: #e8f4ff;
 }
 
-/* Ocean Wave Animations */
-@keyframes wave-flow-1 {
-  0% {
-    transform: translateX(0);
+/* Smooth Wave Animations */
+@keyframes wave-drift {
+  0%, 100% {
+    transform: translateX(0) translateY(0);
   }
-  100% {
-    transform: translateX(-50%);
+  25% {
+    transform: translateX(-5%) translateY(-3px);
   }
-}
-
-@keyframes wave-flow-2 {
-  0% {
-    transform: translateX(0);
+  50% {
+    transform: translateX(-10%) translateY(0);
   }
-  100% {
-    transform: translateX(-50%);
+  75% {
+    transform: translateX(-5%) translateY(3px);
   }
 }
 
-@keyframes wave-flow-3 {
-  0% {
-    transform: translateX(0);
+@keyframes wave-drift-reverse {
+  0%, 100% {
+    transform: translateX(0) translateY(0);
   }
-  100% {
-    transform: translateX(-50%);
+  25% {
+    transform: translateX(5%) translateY(2px);
   }
-}
-
-.animate-wave-1 {
-  animation: wave-flow-1 8s linear infinite;
-}
-
-.animate-wave-2 {
-  animation: wave-flow-2 12s linear infinite;
-  animation-delay: -4s;
-}
-
-.animate-wave-3 {
-  animation: wave-flow-3 16s linear infinite;
-  animation-delay: -8s;
+  50% {
+    transform: translateX(10%) translateY(0);
+  }
+  75% {
+    transform: translateX(5%) translateY(-2px);
+  }
 }
