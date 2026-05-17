@@ -72,11 +72,11 @@
   }
 }
 
-/* Glassmorphism */
+/* Glassmorphism - per DIGIWAVE background spec */
 .glass {
-  background: rgba(9, 20, 38, 0.8);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: rgba(9, 20, 38, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(0, 212, 255, 0.15);
 }
 
@@ -206,5 +206,42 @@
   }
   75% {
     transform: translateX(5%) translateY(-2px);
+  }
+}
+
+/* DIGIWAVE Background Wave Animations */
+@keyframes waveScrollA {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes waveScrollB {
+  from { transform: translateX(-25%); }
+  to { transform: translateX(-75%); }
+}
+
+@keyframes waveScrollC {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.animate-wave-a {
+  animation: waveScrollA 8s linear infinite;
+}
+
+.animate-wave-b {
+  animation: waveScrollB 12s linear infinite;
+}
+
+.animate-wave-c {
+  animation: waveScrollC 16s linear infinite;
+}
+
+/* Mobile optimizations for background */
+@media (max-width: 768px) {
+  .animate-wave-a,
+  .animate-wave-b,
+  .animate-wave-c {
+    opacity: 0.7;
   }
 }

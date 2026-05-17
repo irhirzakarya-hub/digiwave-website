@@ -4,16 +4,20 @@ import { ServicesSection } from "@/components/services-section";
 import { WorkSection } from "@/components/work-section";
 import { ContactSection } from "@/components/contact-section";
 import { Footer } from "@/components/footer";
+import { DigiwaveBackground } from "@/components/digiwave-background";
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen">
-      <Header />
-      <HeroSection />
-      <ServicesSection />
-      <WorkSection />
-      <ContactSection />
-      <Footer />
-    </main>
+    <>
+      <DigiwaveBackground />
+      <main className="min-h-screen relative" style={{ zIndex: 2 }}>
+        <Header />
+        <HeroSection />
+        <ServicesSection />
+        <WorkSection />
+        <ContactSection />
+        <Footer />
+      </main>
+    </>
   );
 }

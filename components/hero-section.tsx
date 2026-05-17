@@ -13,90 +13,9 @@ export function HeroSection() {
       id="home"
       className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
     >
-      {/* Animated Wave Background */}
+      {/* Radial glow behind logo - transparent background */}
       <div className="absolute inset-0 overflow-hidden">
-        {/* Base gradient */}
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-[#030a14]" />
-
-        {/* Animated SVG Waves - Bottom */}
-        <div className="absolute bottom-0 left-0 w-full">
-          {/* Wave Layer 1 - Slowest, Most Transparent */}
-          <svg
-            className="absolute bottom-0 left-0 w-[200%] h-[180px] opacity-20"
-            viewBox="0 0 1440 180"
-            preserveAspectRatio="none"
-            style={{
-              animation: "wave-drift 25s ease-in-out infinite",
-            }}
-          >
-            <defs>
-              <linearGradient id="wave-gradient-1" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#00d4ff" />
-                <stop offset="50%" stopColor="#1a6fff" />
-                <stop offset="100%" stopColor="#00d4ff" />
-              </linearGradient>
-            </defs>
-            <path
-              fill="url(#wave-gradient-1)"
-              d="M0,80 C150,120 350,40 500,80 C650,120 750,60 900,80 C1050,100 1150,50 1300,80 C1450,110 1440,80 1440,80 L1440,180 L0,180 Z"
-            />
-          </svg>
-
-          {/* Wave Layer 2 - Medium Speed */}
-          <svg
-            className="absolute bottom-0 left-0 w-[200%] h-[140px] opacity-30"
-            viewBox="0 0 1440 140"
-            preserveAspectRatio="none"
-            style={{
-              animation: "wave-drift-reverse 18s ease-in-out infinite",
-            }}
-          >
-            <defs>
-              <linearGradient id="wave-gradient-2" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#1a6fff" />
-                <stop offset="50%" stopColor="#00d4ff" />
-                <stop offset="100%" stopColor="#1a6fff" />
-              </linearGradient>
-            </defs>
-            <path
-              fill="url(#wave-gradient-2)"
-              d="M0,60 C200,100 400,30 600,60 C800,90 1000,40 1200,70 C1400,100 1440,60 1440,60 L1440,140 L0,140 Z"
-            />
-          </svg>
-
-          {/* Wave Layer 3 - Fastest, Most Visible */}
-          <svg
-            className="absolute bottom-0 left-0 w-[200%] h-[100px] opacity-40"
-            viewBox="0 0 1440 100"
-            preserveAspectRatio="none"
-            style={{
-              animation: "wave-drift 12s ease-in-out infinite",
-            }}
-          >
-            <defs>
-              <linearGradient id="wave-gradient-3" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#00d4ff" />
-                <stop offset="30%" stopColor="#00b8ff" />
-                <stop offset="70%" stopColor="#1a6fff" />
-                <stop offset="100%" stopColor="#00d4ff" />
-              </linearGradient>
-            </defs>
-            <path
-              fill="url(#wave-gradient-3)"
-              d="M0,50 C180,80 360,20 540,50 C720,80 900,30 1080,50 C1260,70 1440,50 1440,50 L1440,100 L0,100 Z"
-            />
-          </svg>
-        </div>
-
-        {/* Radial glow behind logo */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-radial from-primary/15 via-transparent to-transparent rounded-full blur-3xl" />
-
-        {/* Subtle glow orbs */}
-        <div className="absolute top-1/3 left-1/4 w-64 h-64 bg-primary/5 rounded-full blur-3xl animate-pulse" />
-        <div
-          className="absolute bottom-1/3 right-1/4 w-48 h-48 bg-secondary/5 rounded-full blur-3xl animate-pulse"
-          style={{ animationDelay: "1s" }}
-        />
       </div>
 
       {/* Content */}

@@ -714,8 +714,11 @@ export function WorkSection() {
         id="work"
         className={`py-20 md:py-32 relative ${isRTL ? "rtl" : ""}`}
       >
-        {/* Semi-transparent background */}
-        <div className="absolute inset-0 bg-background/80" />
+        {/* Semi-transparent background per spec */}
+        <div
+          className="absolute inset-0"
+          style={{ backgroundColor: "rgba(5,13,26,0.6)" }}
+        />
         <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Header */}
           <motion.div

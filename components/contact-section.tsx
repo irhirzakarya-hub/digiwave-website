@@ -39,8 +39,11 @@ export function ContactSection() {
       id="contact"
       className={`py-20 md:py-32 relative overflow-hidden ${isRTL ? "rtl" : ""}`}
     >
-      {/* Background - Semi-transparent */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/70 to-background/90" />
+      {/* Background - Semi-transparent per spec */}
+      <div
+        className="absolute inset-0"
+        style={{ backgroundColor: "rgba(5,13,26,0.6)" }}
+      />
 
       {/* Wave decoration at bottom */}
       <div className="absolute bottom-0 left-0 right-0 h-48 overflow-hidden">
