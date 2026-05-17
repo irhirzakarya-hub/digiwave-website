@@ -1,0 +1,179 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: #020810;
+  --foreground: #e8f4ff;
+  --card: #050d1a;
+  --card-foreground: #e8f4ff;
+  --popover: #050d1a;
+  --popover-foreground: #e8f4ff;
+  --primary: #00d4ff;
+  --primary-foreground: #020810;
+  --secondary: #1a6fff;
+  --secondary-foreground: #e8f4ff;
+  --muted: #0a1628;
+  --muted-foreground: #7ba8c4;
+  --accent: #00d4ff;
+  --accent-foreground: #020810;
+  --destructive: #ff4444;
+  --destructive-foreground: #e8f4ff;
+  --border: rgba(0, 212, 255, 0.15);
+  --input: #0a1628;
+  --ring: #00d4ff;
+  --silver: #c0d0e0;
+  --radius: 0.75rem;
+}
+
+@theme inline {
+  --font-sans: var(--font-rajdhani), "Rajdhani", system-ui, sans-serif;
+  --font-display: var(--font-orbitron), "Orbitron", system-ui, sans-serif;
+  --font-arabic: var(--font-cairo), "Cairo", system-ui, sans-serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-silver: var(--silver);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  html[dir="rtl"] body {
+    font-family: var(--font-arabic), system-ui, sans-serif;
+  }
+}
+
+/* Glassmorphism */
+.glass {
+  background: rgba(9, 20, 38, 0.8);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 212, 255, 0.15);
+}
+
+/* Neon glow effects */
+.neon-glow {
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.3), 0 0 40px rgba(0, 212, 255, 0.1);
+}
+
+.neon-text {
+  text-shadow: 0 0 10px rgba(0, 212, 255, 0.5), 0 0 20px rgba(0, 212, 255, 0.3);
+}
+
+.neon-border {
+  box-shadow: 0 0 15px rgba(0, 212, 255, 0.2),
+    inset 0 0 15px rgba(0, 212, 255, 0.05);
+}
+
+/* Animated wave background */
+@keyframes wave-flow {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  50% {
+    transform: translateX(-25px) translateY(10px);
+  }
+  100% {
+    transform: translateX(0) translateY(0);
+  }
+}
+
+@keyframes wave-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-wave {
+  animation: wave-flow 6s ease-in-out infinite;
+}
+
+.animate-wave-slow {
+  animation: wave-rotate 8s linear infinite;
+}
+
+/* Pulse glow animation */
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.4), 0 0 40px rgba(0, 212, 255, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(0, 212, 255, 0.6), 0 0 60px rgba(0, 212, 255, 0.3);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Float animation */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050d1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #00d4ff, #1a6fff);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #00d4ff, #00ffcc);
+}
+
+/* Selection */
+::selection {
+  background: rgba(0, 212, 255, 0.3);
+  color: #e8f4ff;
+}
