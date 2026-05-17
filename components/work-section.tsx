@@ -495,9 +495,21 @@ function DesignProjectCard({
         <h3 className="text-base font-bold text-foreground mb-1">
           {project.title[language]}
         </h3>
-        <p className="text-sm text-muted-foreground">
+        <p className="text-sm text-muted-foreground mb-3">
           {project.description[language]}
         </p>
+        {/* Download Button */}
+        <a
+          href={project.pdfUrl}
+          download
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 px-3 py-1.5 text-xs font-bold rounded-full border border-primary/40 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <Download className="w-3 h-3" />
+          Télécharger
+        </a>
       </div>
 
       {/* Bottom accent */}
@@ -638,9 +650,11 @@ export function WorkSection() {
     <>
       <section
         id="work"
-        className={`py-20 md:py-32 bg-[#050d1a] ${isRTL ? "rtl" : ""}`}
+        className={`py-20 md:py-32 relative ${isRTL ? "rtl" : ""}`}
       >
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Semi-transparent background */}
+        <div className="absolute inset-0 bg-background/80" />
+        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Header */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}

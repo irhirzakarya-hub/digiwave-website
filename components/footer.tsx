@@ -38,7 +38,7 @@ export function Footer() {
 
   return (
     <footer
-      className={`relative border-t border-primary/20 ${isRTL ? "rtl" : ""}`}
+      className={`relative border-t border-primary/20 bg-background/90 ${isRTL ? "rtl" : ""}`}
     >
       {/* Top neon line */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary to-transparent" />

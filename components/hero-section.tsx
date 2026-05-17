@@ -13,48 +13,10 @@ export function HeroSection() {
       id="home"
       className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
     >
-      {/* Animated Background */}
+      {/* Animated Background - Subtle overlay */}
       <div className="absolute inset-0 overflow-hidden">
-        {/* Wave gradient background */}
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-[#050d1a]" />
-
-        {/* Animated wave patterns */}
-        <svg
-          className="absolute bottom-0 left-0 w-full h-64 opacity-30 animate-wave"
-          viewBox="0 0 1440 320"
-          preserveAspectRatio="none"
-        >
-          <path
-            fill="url(#wave-gradient-1)"
-            d="M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-          />
-          <defs>
-            <linearGradient
-              id="wave-gradient-1"
-              x1="0%"
-              y1="0%"
-              x2="100%"
-              y2="0%"
-            >
-              <stop offset="0%" stopColor="#00d4ff" />
-              <stop offset="50%" stopColor="#1a6fff" />
-              <stop offset="100%" stopColor="#00d4ff" />
-            </linearGradient>
-          </defs>
-        </svg>
-
-        <svg
-          className="absolute bottom-0 left-0 w-full h-48 opacity-15"
-          viewBox="0 0 1440 320"
-          preserveAspectRatio="none"
-          style={{ animationDelay: "0.5s" }}
-        >
-          <path
-            className="animate-wave"
-            fill="#00d4ff"
-            d="M0,64L48,80C96,96,192,128,288,128C384,128,480,96,576,106.7C672,117,768,171,864,181.3C960,192,1056,160,1152,144C1248,128,1344,128,1392,128L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-          />
-        </svg>
+        {/* Transparent gradient to blend with ocean wave background */}
+        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/50 to-transparent" />
 
         {/* Radial glow behind logo */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-radial from-primary/20 via-transparent to-transparent rounded-full blur-3xl" />

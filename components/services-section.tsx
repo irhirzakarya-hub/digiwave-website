@@ -42,8 +42,8 @@ export function ServicesSection() {
       id="services"
       className="relative py-20 md:py-32 overflow-hidden"
     >
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#050d1a] via-background to-background" />
+      {/* Background - Semi-transparent to show ocean waves */}
+      <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/70 to-background/90" />
 
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}

@@ -39,8 +39,8 @@ export function ContactSection() {
       id="contact"
       className={`py-20 md:py-32 relative overflow-hidden ${isRTL ? "rtl" : ""}`}
     >
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#050d1a] via-background to-background" />
+      {/* Background - Semi-transparent */}
+      <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/70 to-background/90" />
 
       {/* Wave decoration at bottom */}
       <div className="absolute bottom-0 left-0 right-0 h-48 overflow-hidden">
@@ -124,7 +124,25 @@ export function ContactSection() {
 
               {/* Name & Role */}
               <h3 className="text-xl font-bold text-foreground mb-1">
-                {member.name}
+                {member.id === 1 ? (
+                  <>
+                    Lahcen{" "}
+                    <span
+                      className="text-primary font-bold"
+                      style={{
+                        color: "#00d4ff",
+                        fontWeight: 700,
+                        letterSpacing: "0.05em",
+                        textShadow: "0 0 10px rgba(0, 212, 255, 0.5)",
+                      }}
+                    >
+                      IRHIR
+                    </span>{" "}
+                    Hmmouch
+                  </>
+                ) : (
+                  member.name
+                )}
               </h3>
               <p className="text-sm text-primary font-medium mb-4">
                 {t.contact[member.role as "founder" | "cofounder"]} · DIGIWAVE
